@@ -1,0 +1,123 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+    
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> Register
+      </h1>
+      <% include ./partials/messages %>
+
+      <form action="/users/register" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="name"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="supervisor">Supervisor</label>
+          <input
+
+            type="checkbox"
+            id="supervisor"
+            name="supervisor"
+            class="form-control"
+            placeholder="Check for Supervisor or Employee"
+            value="true" 
+            onchange='myFunction()' 
+          />
+          <label for="employee">Not Supervisor</label>
+          <input
+          
+            type="checkbox"
+            id="employee"
+            name="employee"
+            class="form-control"
+            placeholder="Check for Supervisor or Employee"
+            value="true"
+          />
+          <div style="padding-top: 20px" class="dept">
+          <input
+            
+            type="dept"
+            id="dept"
+            name="dept"
+            class="form-control"
+            placeholder="Enter department name"
+            style="display: none;"
+            value="<%= typeof dept != 'undefined' ? dept : '' %>"
+          />
+        </div>
+          <script>
+            function myFunction() {
+            var x = document.getElementById("dept");
+            var y = document.getElementById("supervisor").checked
+            if (y) {
+            if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+            }
+          }
+          </script>
+
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of birth</label>
+          <input
+            type="dob"
+            id="dob"
+            name="dob"
+            class="form-control"
+            placeholder="Enter date of birth"
+            value="<%= typeof dob != 'undefined' ? dob : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            class="form-control"
+            placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
+      <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+    </div>
+  </div>
+</div>

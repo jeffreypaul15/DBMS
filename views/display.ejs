@@ -1,0 +1,17 @@
+<style>
+      .s {
+            padding: 10px;
+      }
+</style>
+
+<h1 class="mt-4">Supervisors</h1>
+
+ <ul class=" s list-group">
+      <% for ( i of user) { %>
+            <div class='s'>
+                  <li class=" list-group-item active"><%= i.name %></li>
+            </div>
+       <% } %>
+</ul>
+<a href="/dashboard" class="btn btn-secondary">Back</a>
+

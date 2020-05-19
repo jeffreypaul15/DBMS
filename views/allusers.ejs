@@ -1,0 +1,25 @@
+<style>
+    .s {
+          padding: 10px;
+    }
+</style>
+
+<h1 class="mt-4">Supervisors</h1>
+
+<ul class=" s list-group">
+    <% for ( i of user) { %>
+          <div class='s'>
+                <li class=" list-group-item active">id: <%= i._id %></li>
+                <li class=" list-group-item active">Name : <%= i.name %></li>
+                <li class=" list-group-item active">Email : <%= i.email %></li>
+                <li class=" list-group-item active">DOB : <%= i.dob %></li>
+                <% if (i.access) { %>
+                <li class=" list-group-item active btn-success">Supervisor</li>
+                <% } else { %>
+                <li class=" list-group-item active btn-warning">Employee</li>
+                <% } %>
+          </div>
+     <% } %>
+</ul>
+<a href="/dashboard" class="btn btn-secondary">Back</a>
+

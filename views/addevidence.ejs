@@ -1,0 +1,69 @@
+<style>
+    .s {
+          padding: 10px;
+    }
+</style>
+
+<h1 class="mt-4">Supervisors</h1>
+
+<% include ./partials/messages %>
+<ul class=" s list-group">
+    <form action="/add_evidence" method="POST">
+        <div class="form-group">
+          <label for="Class">Class</label>
+          <input
+            type="Class"
+            id="Class"
+            name="Class"
+            class="form-control"
+            placeholder="Enter Class"
+            value="<%= typeof Class != 'undefined' ? Class : '' %>"
+          />
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input
+              type="Description"
+              id="Description"
+              name="Description"
+              class="form-control"
+              placeholder="Enter Description"
+              value="<%= typeof Description != 'undefined' ? Description : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Dimentions">Dimensions</label>
+            <input
+              type="Dimentions"
+              id="Dimentions"
+              name="Dimentions"
+              class="form-control"
+              placeholder="Enter Dimensions"
+              value="<%= typeof Dimentions != 'undefined' ? Dimentions : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Source">Source</label>
+            <input
+              type="Source"
+              id="Source"
+              name="Source"
+              class="form-control"
+              placeholder="Enter Source"
+              value="<%= typeof Source != 'undefined' ? Source : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            
+            <label for="Department">Select Depatment</label>
+            <select class="form-control" id="Department" name="Department">
+                <% for ( i of locs) { %>
+                <option value='<%= i.name %>'><%= i.name %></option>
+                <% } %>
+              </select>
+          </div>
+        <button type="submit" class="btn btn-primary btn-block">Add</button>
+      </form>
+</ul>
+<a href="/dashboard" class="btn btn-secondary">Back</a>
+

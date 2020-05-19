@@ -1,0 +1,21 @@
+<style>
+    .s {
+          padding: 10px;
+    }
+</style>
+
+<h1 class="mt-4">Supervisors</h1>
+
+<ul class=" s list-group">
+    <% for ( i of materials) { %>
+          <div class='s'>
+                 <li class=" list-group-item active">Material ID : <%= i._id %></li>
+                <li class=" list-group-item active">Description : <%= i.description %></li>
+                <li class=" list-group-item active">Dimensions : <%= i.dimentions %></li>
+                <li class=" list-group-item active">Department name : <%= i.department_name %></li>
+                <li class=" list-group-item active">Source : <%= i.source %></li>
+            </div>
+     <% } %>
+</ul>
+<a href="/dashboard" class="btn btn-secondary">Back</a>
+
